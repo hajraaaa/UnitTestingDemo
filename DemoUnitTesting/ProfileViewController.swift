@@ -8,13 +8,14 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-    
+
     private let nameLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Hello World"
         lbl.textAlignment = .center
         lbl.font = .systemFont(ofSize: 22, weight: .medium)
         lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.isUserInteractionEnabled = true
         return lbl
     }()
 
@@ -22,6 +23,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
+        setupGesture()
     }
 
     private func setupViews() {
@@ -33,5 +35,14 @@ class ProfileViewController: UIViewController {
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
+    }
+
+    private func setupGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
+        nameLabel.addGestureRecognizer(tap)
+    }
+
+    @objc private func labelTapped() {
+        print("Label tapped!")
     }
 }
