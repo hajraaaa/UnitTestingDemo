@@ -43,6 +43,6 @@ class ProfileViewController: UIViewController {
     }
 
     @objc private func labelTapped() {
-        print("Label tapped!")
+        print("Label tapped!!")
     }
 }
