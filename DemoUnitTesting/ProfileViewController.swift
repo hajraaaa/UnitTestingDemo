@@ -11,7 +11,7 @@ class ProfileViewController: UIViewController {
     
     private let nameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Hello World"
+        lbl.text = "Enter your Name..."
         lbl.textAlignment = .center
         lbl.font = .systemFont(ofSize: 22, weight: .medium)
         lbl.translatesAutoresizingMaskIntoConstraints = false
