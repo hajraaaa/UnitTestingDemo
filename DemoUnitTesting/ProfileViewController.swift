@@ -34,4 +34,13 @@ class ProfileViewController: UIViewController {
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
+
+    private func setupGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
+        nameLabel.addGestureRecognizer(tap)
+    }
+
+    @objc private func labelTapped() {
+        print("Label tapped!!")
+    }
 }
